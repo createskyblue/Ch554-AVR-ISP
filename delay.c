@@ -2,6 +2,7 @@
 #include "ch554_platform.h"
 
 void mDelayuS(uint16_t n ) {
+    n*=2;
 #ifdef	CLOCK_CFG
 #if		CLOCK_CFG <= 6000000
 		n >>= 2;

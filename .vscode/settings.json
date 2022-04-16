@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        "usb_cdc.h": "c",
+        "ch554_platform.h": "c"
+    }
+}

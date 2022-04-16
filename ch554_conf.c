@@ -116,10 +116,8 @@ void CH554_Init(void) {
 	mDelaymS(5);	// Wait until the internal crystal becomes stable
 	
 	//UART0_Init();
-	I2C_Init();
-	SPI_SetMasterMode3();
-	SPI_SetMasterIOFloat();
-	SPI_SetClockDivider(4);
+	// I2C_Init();
+	
 	
 	USBDevice_Init();
   

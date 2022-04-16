@@ -37,6 +37,9 @@ extern uint32_t CDC_Baud;
 void CDC_InitBaud(void);
 void CDC_SetBaud(void);
 void CDC_USB_Poll(void);
-void CDC_UART_Poll(void);
 
+uint8_t CDC_UART_available(void);
+uint8_t CDC_UART_read(void);
+void CDC_UART_write(uint8_t dat);
+void CDC_UART_print(char* str);
 #endif

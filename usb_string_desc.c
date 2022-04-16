@@ -15,8 +15,8 @@ code const uint8_t DevName1[] = {
 };
 
 code const uint8_t ProductName[] = {
-	38, 0x03, 	// Length = 38 bytes, String Descriptor (0x03)
-	'R', 0, 'i', 0, 'k', 0, 'k', 0, 'a', 0, '`', 0, 's', 0, ' ', 0, 'C', 0, 'H', 0, '5', 0, '5', 0, '4', 0, ' ', 0, 'D', 0, 'e', 0, 'm', 0, 'o', 0
+	38, 0x03, 	// Length =  bytes, String Descriptor (0x03)
+	'C', 0, 'H', 0, '5', 0, '5', 0, '4', 0, ' ', 0, 'A', 0, 'V', 0, 'R', 0, '-', 0, 'I', 0, 'S', 0, 'P', 0
 };
 
 code const uint8_t ManuName[] = {

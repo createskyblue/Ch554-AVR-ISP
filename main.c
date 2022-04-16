@@ -1,17 +1,10 @@
-#include "Delay.H"
+#include "delay.h"
+#include "spi.h"
 #include "usb_cdc.h"
-
+#include "stk500.h"
 #include "ch554_platform.h"
 
-void main(void) {
-	CDC_InitBaud();
-    CH554_Init();
-	
-    while(1) {
-    	CDC_USB_Poll();
-    	CDC_UART_Poll();
-    };
-}
+#define DELAY_MS_HW
 
 /*
  * According to SDCC specification, interrupt handlers MUST be placed within the file which contains
@@ -22,3 +15,16 @@ void USBInterruptEntry(void) interrupt INT_NO_USB {
 	USBInterrupt();
 }
 
+
+void main(void) {
+	CDC_InitBaud();
+    CH554_Init();
+    DEBUG = 0;
+	
+    while(1) {
+    	CDC_USB_Poll();
+        if (CDC_UART_available()) {
+            ISP_Process_Data(); //处理数据
+        }
+    };
+}
