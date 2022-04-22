@@ -28,6 +28,10 @@ void USB_EP0_SETUP(void) {
 		if (UsbSetupBuf->wLengthH || SetupLen > 0x7F)
 			SetupLen = 0x7F;	// Limit the total length
 
+        if (UsbSetupBuf->wLengthH != 0){
+            SetupLen = 0xFF;                    // 限制总长度
+        }
+
 		len = 0;	// Assume success -> Tx 0-length packet
 		SetupReq = UsbSetupBuf->bRequest;
 
@@ -57,8 +61,8 @@ void USB_EP0_SETUP(void) {
 					len = UsbSetupBuf->wIndexL;
 					if (len < USB_INTERFACES) {
 						
-						//pDescr = USB_HID_GetReportDesc(len);
-						//len = USB_HID_GetReportDesc_Length(len);
+						// pDescr = USB_HID_GetReportDesc(len);
+						// len = USB_HID_GetReportDesc_Length(len);
 					} else {
 						len = 0xff;		// The host is trying to config invalid interfaces
 					}

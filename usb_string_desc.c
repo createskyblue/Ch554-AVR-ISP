@@ -9,19 +9,19 @@ code const uint8_t LangDesc[] = {
 
 // String Descriptors:
 
-code const uint8_t DevName1[] = {
-	20, 0x03, 	// Length = 20 bytes, String Descriptor (0x03)
-	'C', 0, 'H', 0, '5', 0, '5', 0, '4', 0, ' ', 0, 'C', 0, 'D', 0, 'C', 0
-};
-
 code const uint8_t ProductName[] = {
-	38, 0x03, 	// Length =  bytes, String Descriptor (0x03)
+	28, 0x03, 	// Length = 28 bytes, String Descriptor (0x03)
 	'C', 0, 'H', 0, '5', 0, '5', 0, '4', 0, ' ', 0, 'A', 0, 'V', 0, 'R', 0, '-', 0, 'I', 0, 'S', 0, 'P', 0
 };
 
 code const uint8_t ManuName[] = {
-	18, 0x03, 	// Length = 18 bytes, String Descriptor (0x03)
-	'R', 0, 'i', 0, 'k', 0, 'k', 0, 'a', 0, '0', 0, 'w', 0, '0', 0
+	24, 0x03, 	// Length = 18 bytes, String Descriptor (0x03)
+	'Z', 0, 'S', 0, 'C', 0, '-', 0, '2', 0, '0', 0, '2', 0, '0', 0, 'L', 0, 'H', 0, 'W', 0
+};
+
+code const uint8_t DevName1[] = {
+	16, 0x03, 	// Length = 20 bytes, String Descriptor (0x03)
+	'z', 0, 's', 0, 'c', 0, '-', 0, 'e', 0, 'd', 0, 'u', 0
 };
 
 code const uint8_t* StringDescs[USB_STRINGDESC_COUNT] = {	

@@ -47,7 +47,7 @@ void CDC_SetBaud(void) {
 	//*((uint8_t *)&CDC_Baud+3) = LineCoding[3];
 
 	if(CDC_Baud > 999999)
-		CDC_Baud = 57600;
+		CDC_Baud = 9600;
 }
 
 void USB_EP1_IN(void) {

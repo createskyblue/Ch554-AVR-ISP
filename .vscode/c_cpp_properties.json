@@ -4,7 +4,8 @@
             "name": "Target 1",
             "includePath": [
                 "c:\\Users\\INTEL\\Documents\\WCH_MCU\\CH55x_USB_CDC",
-                "D:\\Keil_v5\\C51\\INC"
+                "D:\\Keil_v5\\C51\\INC",
+                "c:\\Users\\INTEL\\Documents\\WCH_MCU\\ZSC_Edu_AvrISP"
             ],
             "defines": [
                 "CLOCK_FREQ_24",

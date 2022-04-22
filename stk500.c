@@ -1,7 +1,7 @@
 /*
  * @Author: Createskyblue
  * @Date: 2022-04-16 10:28:28
- * @LastEditTime: 2022-04-16 12:33:37
+ * @LastEditTime: 2022-04-16 13:06:37
  * @LastEditors: Createskyblue
  * @Description: 
  * @FilePath: \CH55x_USB_CDC\stk500.c
@@ -200,6 +200,7 @@ unsigned long ISP_Get_Current_Page()
 void ISP_Commit(unsigned long addr)
 {
     ISP_Trans_Package(0x4C, (addr >> 8) & 0xFF, addr & 0xFF, 0);
+    mDelaymS(5);
 }
 
 //编程一字节
@@ -262,9 +263,7 @@ unsigned char ISP_Write_EEPROM_Chunk(unsigned long start, unsigned long length)
     {
         addr = start + x;
         ISP_Trans_Package(0xC0, (addr >> 8) & 0xFF, addr & 0xFF, ISP_Data_Buffer[x]);
-        // DEBUG = 1;
         mDelaymS(45);
-        // DEBUG = 0;
     }
     return Resp_STK_OK;
 }
@@ -301,8 +300,6 @@ void ISP_Program_Page()
     unsigned char memtype;
     unsigned int length;
 
-    DEBUG = 1;
-
     result = Resp_STK_FAILED;
     length = 256 * CDC_UART_read();
     length += CDC_UART_read();
@@ -312,7 +309,6 @@ void ISP_Program_Page()
     if (memtype == 'F')
     {
         ISP_Write_Flash(length);
-        DEBUG = 0;
         return;
     }
     if (memtype == 'E')
@@ -519,7 +515,6 @@ void ISP_Process_Data()
     case Cmnd_STK_PROG_PAGE:
         //0x64
         ISP_Program_Page();
-        mDelaymS(50);
         break;
 
     case Cmnd_STK_READ_PAGE:
