@@ -6,11 +6,11 @@
 <https://github.com/DT9025A/STC8G-AVRISP>(该部分使用BSD协议)
 的AVR-ISP项目，实现了基于CH554的虚拟USB AVR-ISP下载工具，默认波特率为19200
 
-![HW](img\测试硬件.jpg)
+![HW](img\HW.jpg)
 
 ## 硬件
 
-![原理图](img\原理图.png)
+![原理图](img\ec.png)
 ![PCB](img\PCB.png)
 
 ## 自定义USB虚拟串口设备名
@@ -19,10 +19,10 @@
 
 并且为了可以正确在设备管理器中正确显示自定义的串口名，请使用Zadig软件替换驱动为USB Serial(CDC)
 
-![Zadig替换驱动](img\替换驱动.png)
+![Zadig替换驱动](img\Zadig.png)
 
-![USB设备名](img\USB设备名.png)
+![USB设备名](img\USB_name.png)
 
 ## 修改默认波特率
 
-![修改默认波特率](img\修改默认波特率.png)
+![修改默认波特率](img\CDC_Baud.png)
