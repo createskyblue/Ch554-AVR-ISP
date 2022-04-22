@@ -10,6 +10,9 @@
 
 ## 硬件
 
+请查看以下链接
+<https://oshwhub.com/createskyblue/ch552_badusb_copy>
+
 ![原理图](img/ec.png)
 ![PCB](img/PCB.png)
 
